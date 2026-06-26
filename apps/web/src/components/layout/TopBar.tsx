@@ -30,7 +30,7 @@ export function TopBar() {
   const menuRef  = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const pageTitle = PAGE_TITLES[pathname] ?? "";
+  const pageTitle = PAGE_TITLES[pathname ?? ""] ?? "";
   const initial   = (user?.displayName || user?.username || "?").slice(0, 1).toUpperCase();
 
   useEffect(() => {
