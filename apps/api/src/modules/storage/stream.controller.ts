@@ -28,8 +28,10 @@ export class StreamController {
   async streamRedirect(@Param("trackId") trackId: string) {
     const track = await this.tracksService.get(trackId);
     const url = await this.storage.getUrl(track.filePath).catch(() => null);
-    if (!url) throw new NotFoundException("Audio file not found");
-    return { url, statusCode: 302 };
+    // Fall back to original source URL (e.g. seeded tracks on ephemeral filesystem)
+    const finalUrl = (url && url.length > 0) ? url : track.sourceUrl;
+    if (!finalUrl) throw new NotFoundException("Audio file not found");
+    return { url: finalUrl, statusCode: 302 };
   }
 
   /**
