@@ -100,8 +100,8 @@ export function HomeContent() {
     setSeeding(true);
     setSeedResult(null);
     try {
-      const res = await api.post<{ imported: number; skipped: number }>("/admin/seed");
-      const { imported, skipped } = res.data;
+      const res = await api.post<{ data: { imported: number; skipped: number } }>("/admin/seed");
+      const { imported, skipped } = res.data.data ?? res.data;
       setSeedResult(`Added ${imported} tracks${skipped ? ` (${skipped} already existed)` : ""}.`);
       const t = unwrapData(await api.get<{ data: Track[] }>("/tracks"));
       setTracks(t);
