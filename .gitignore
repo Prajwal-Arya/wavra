@@ -4,3 +4,5 @@ dist
 .env
 apps/api/uploads
 *.log
+**/uploads/
+apps/web/.env.local
