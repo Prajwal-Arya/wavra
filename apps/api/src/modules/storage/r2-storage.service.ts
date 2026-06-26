@@ -21,13 +21,19 @@ export class R2StorageService implements IStorageProvider, OnModuleInit {
   constructor(private readonly config: ConfigService) {}
 
   onModuleInit() {
-    const accountId  = this.config.getOrThrow<string>("R2_ACCOUNT_ID");
-    const accessKey  = this.config.getOrThrow<string>("R2_ACCESS_KEY_ID");
-    const secretKey  = this.config.getOrThrow<string>("R2_SECRET_ACCESS_KEY");
-    this.bucket      = this.config.getOrThrow<string>("R2_BUCKET");
-    this.publicUrl   = this.config.get<string>("R2_PUBLIC_URL"); // optional custom domain
+    const accountId = this.config.get<string>("R2_ACCOUNT_ID");
+    const accessKey = this.config.get<string>("R2_ACCESS_KEY_ID");
+    const secretKey = this.config.get<string>("R2_SECRET_ACCESS_KEY");
+    const bucket    = this.config.get<string>("R2_BUCKET");
 
-    this.client = new S3Client({
+    if (!accountId || !accessKey || !secretKey || !bucket) {
+      this.logger.warn("R2 env vars not set — R2StorageService will not be used");
+      return;
+    }
+
+    this.bucket    = bucket;
+    this.publicUrl = this.config.get<string>("R2_PUBLIC_URL");
+    this.client    = new S3Client({
       region: "auto",
       endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
       credentials: { accessKeyId: accessKey, secretAccessKey: secretKey },
