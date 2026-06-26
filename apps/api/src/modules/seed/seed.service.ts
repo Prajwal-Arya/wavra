@@ -9,17 +9,16 @@ import { LinkImportService } from "../tracks/link-import.service";
 // Curated royalty-free tracks from the Internet Archive (CC licensed).
 // Each entry is a direct MP3 URL from archive.org — all CC BY or CC0.
 const SEED_TRACKS = [
-  { url: "https://archive.org/download/kevin-macleod-royalty-free-music/Cipher.mp3",          title: "Cipher",             artist: "Kevin MacLeod", genre: "Electronic" },
-  { url: "https://archive.org/download/kevin-macleod-royalty-free-music/Deliberate%20Thought.mp3", title: "Deliberate Thought", artist: "Kevin MacLeod", genre: "Ambient"    },
-  { url: "https://archive.org/download/kevin-macleod-royalty-free-music/Chill.mp3",           title: "Chill",              artist: "Kevin MacLeod", genre: "Lo-fi"       },
-  { url: "https://archive.org/download/kevin-macleod-royalty-free-music/Backed%20Vibes%20Clean.mp3", title: "Backed Vibes", artist: "Kevin MacLeod", genre: "Hip-Hop"    },
-  { url: "https://archive.org/download/kevin-macleod-royalty-free-music/Perspectives.mp3",    title: "Perspectives",       artist: "Kevin MacLeod", genre: "Ambient"    },
-  // ccMixter & Free Music Archive direct downloads (CC BY)
-  { url: "https://archive.org/download/alans_gone/alans_gone.mp3",                            title: "Alan's Gone",        artist: "Siobhan Dakay", genre: "Indie"       },
-  { url: "https://archive.org/download/cd_piano-music-for-the-people/01%20Piano%20Sonata%20No.%2016%20in%20C%20Major%2C%20K.%20545_%20I.%20Allegro.mp3", title: "Piano Sonata No.16 in C", artist: "Mozart", genre: "Classical" },
-  { url: "https://archive.org/download/beethoven_opus18/Op18No1-01.mp3",                      title: "String Quartet Op.18", artist: "Beethoven",   genre: "Classical"  },
-  { url: "https://archive.org/download/MusOpen-guitar/MusOpen-guitar.mp3",                    title: "Guitar Serenade",    artist: "MusOpen",       genre: "Acoustic"   },
-  { url: "https://archive.org/download/SilenceOfCrickets/silence_of_crickets.mp3",            title: "Silence of Crickets", artist: "Josh Woodward", genre: "Ambient"   },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",  title: "SoundHelix Song 1",  artist: "SoundHelix", genre: "Electronic" },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",  title: "SoundHelix Song 2",  artist: "SoundHelix", genre: "Ambient"    },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",  title: "SoundHelix Song 3",  artist: "SoundHelix", genre: "Lo-fi"      },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",  title: "SoundHelix Song 4",  artist: "SoundHelix", genre: "Hip-Hop"    },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",  title: "SoundHelix Song 5",  artist: "SoundHelix", genre: "Ambient"    },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",  title: "SoundHelix Song 6",  artist: "SoundHelix", genre: "Indie"      },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",  title: "SoundHelix Song 7",  artist: "SoundHelix", genre: "Classical"  },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",  title: "SoundHelix Song 8",  artist: "SoundHelix", genre: "Classical"  },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",  title: "SoundHelix Song 9",  artist: "SoundHelix", genre: "Acoustic"   },
+  { url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3", title: "SoundHelix Song 10", artist: "SoundHelix", genre: "Ambient"    },
 ];
 
 const SYSTEM_USER = {
