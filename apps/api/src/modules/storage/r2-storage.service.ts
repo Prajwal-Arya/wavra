@@ -14,8 +14,8 @@ import type { IStorageProvider } from "./storage.interface";
 @Injectable()
 export class R2StorageService implements IStorageProvider, OnModuleInit {
   private readonly logger = new Logger(R2StorageService.name);
-  private client: S3Client;
-  private bucket: string;
+  private client!: S3Client;
+  private bucket!: string;
   private publicUrl: string | undefined;
 
   constructor(private readonly config: ConfigService) {}
