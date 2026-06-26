@@ -16,9 +16,9 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
   app.useGlobalInterceptors(new TransformInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());
-  const port = process.env.API_PORT ? Number(process.env.API_PORT) : 3001;
-  await app.listen(port, "127.0.0.1");
-  logger.log(`API listening at http://localhost:${port}/api`);
+  const port = Number(process.env.PORT ?? process.env.API_PORT ?? 3001);
+  await app.listen(port, "0.0.0.0");
+  logger.log(`API listening on port ${port}`);
 }
 
 void bootstrap();

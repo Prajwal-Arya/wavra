@@ -20,16 +20,24 @@ import { User } from "../modules/users/user.entity";
   imports: [
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
-      useFactory: (config: ConfigService) => ({
-        type: "postgres",
-        host: config.get<string>("database.host"),
-        port: config.get<number>("database.port"),
-        username: config.get<string>("database.username"),
-        password: config.get<string>("database.password"),
-        database: config.get<string>("database.database"),
-        entities: [User, Track, Playlist, PlaylistTrack, PlaylistCollaborator, PlaylistVote, TrackReaction, TrackComment, PlayHistory, Follow, Activity, UserBadge, Challenge, UserChallenge],
-        synchronize: true
-      })
+      useFactory: (config: ConfigService) => {
+        const url = process.env.DATABASE_URL;
+        const base = {
+          type: "postgres" as const,
+          entities: [User, Track, Playlist, PlaylistTrack, PlaylistCollaborator, PlaylistVote, TrackReaction, TrackComment, PlayHistory, Follow, Activity, UserBadge, Challenge, UserChallenge],
+          synchronize: true,
+          ssl: url ? { rejectUnauthorized: false } : false,
+        };
+        if (url) return { ...base, url };
+        return {
+          ...base,
+          host: config.get<string>("database.host"),
+          port: config.get<number>("database.port"),
+          username: config.get<string>("database.username"),
+          password: config.get<string>("database.password"),
+          database: config.get<string>("database.database"),
+        };
+      }
     })
   ]
 })
