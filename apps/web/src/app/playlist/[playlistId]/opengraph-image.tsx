@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import type { Playlist } from "@/types";
 
 export const runtime = "edge";
-export const alt = "Playlist on SoundNest";
+export const alt = "Playlist on Wavra";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,14 +46,14 @@ export default async function OgImage({ params }: { params: { playlistId: string
         🎵
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
-        <div style={{ fontSize: 14, color: "#22c55e", fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>SoundNest · Playlist</div>
+        <div style={{ fontSize: 14, color: "#22c55e", fontWeight: 600, letterSpacing: 2, textTransform: "uppercase" }}>Wavra · Playlist</div>
         <div style={{ fontSize: 52, fontWeight: 800, color: "#ffffff", lineHeight: 1.1 }}>{playlist.name}</div>
         {playlist.description && <div style={{ fontSize: 24, color: "#a1a1aa", fontWeight: 400 }}>{playlist.description}</div>}
         <div style={{ fontSize: 18, color: "#71717a", marginTop: 8 }}>
           {trackCount > 0 ? `${trackCount} track${trackCount === 1 ? "" : "s"}` : ""}
           {playlist.owner?.displayName ? ` · by ${playlist.owner.displayName}` : ""}
         </div>
-        <div style={{ fontSize: 18, color: "#52525b", marginTop: "auto" }}>Listen on SoundNest →</div>
+        <div style={{ fontSize: 18, color: "#52525b", marginTop: "auto" }}>Listen on Wavra →</div>
       </div>
     </div>,
     { ...size }

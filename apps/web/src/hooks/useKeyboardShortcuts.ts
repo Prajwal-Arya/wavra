@@ -17,11 +17,11 @@ export function useKeyboardShortcuts() {
       }
       if (event.key === "ArrowLeft") {
         event.preventDefault();
-        window.dispatchEvent(new CustomEvent("soundnest:seek-seconds", { detail: -5 }));
+        window.dispatchEvent(new CustomEvent("wavra:seek-seconds", { detail: -5 }));
       }
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        window.dispatchEvent(new CustomEvent("soundnest:seek-seconds", { detail: 5 }));
+        window.dispatchEvent(new CustomEvent("wavra:seek-seconds", { detail: 5 }));
       }
       if (event.key.toLowerCase() === "n") player.next();
       if (event.key.toLowerCase() === "p") player.prev();

@@ -33,8 +33,8 @@ export function AudioPlayer() {
       audio.currentTime = (progress / 100) * audio.duration;
     }
 
-    window.addEventListener("soundnest:seek", onSeek);
-    return () => window.removeEventListener("soundnest:seek", onSeek);
+    window.addEventListener("wavra:seek", onSeek);
+    return () => window.removeEventListener("wavra:seek", onSeek);
   }, []);
 
   useEffect(() => {
@@ -45,8 +45,8 @@ export function AudioPlayer() {
       player.setProgress((audio.currentTime / audio.duration) * 100);
     }
 
-    window.addEventListener("soundnest:seek-seconds", onSeekSeconds);
-    return () => window.removeEventListener("soundnest:seek-seconds", onSeekSeconds);
+    window.addEventListener("wavra:seek-seconds", onSeekSeconds);
+    return () => window.removeEventListener("wavra:seek-seconds", onSeekSeconds);
   }, [player]);
 
   useEffect(() => {

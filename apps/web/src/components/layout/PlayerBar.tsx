@@ -23,7 +23,7 @@ export function PlayerBar() {
 
   function seek(value: number) {
     player.seek(value);
-    window.dispatchEvent(new CustomEvent("soundnest:seek", { detail: value }));
+    window.dispatchEvent(new CustomEvent("wavra:seek", { detail: value }));
   }
 
   return (

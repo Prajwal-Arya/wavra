@@ -60,7 +60,7 @@ export function Sidebar() {
           opacity-0 transition-all duration-200 delay-75
           group-hover/sidebar:opacity-100
         ">
-          SoundNest
+          Wavra
         </span>
       </Link>
 

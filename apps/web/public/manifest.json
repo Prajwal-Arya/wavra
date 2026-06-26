@@ -1,6 +1,6 @@
 {
-  "name": "SoundNest",
-  "short_name": "SoundNest",
+  "name": "Wavra",
+  "short_name": "Wavra",
   "description": "Upload, stream, discover, and organize music.",
   "start_url": "/",
   "display": "standalone",

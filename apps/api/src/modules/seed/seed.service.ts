@@ -23,9 +23,9 @@ const SEED_TRACKS = [
 ];
 
 const SYSTEM_USER = {
-  email: "library@soundnest.internal",
-  username: "soundnest_library",
-  displayName: "SoundNest Library",
+  email: "library@wavra.internal",
+  username: "wavra_library",
+  displayName: "Wavra Library",
   bio: "Official royalty-free music collection. All tracks are Creative Commons licensed.",
 };
 

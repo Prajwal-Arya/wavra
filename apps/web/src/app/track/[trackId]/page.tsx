@@ -10,15 +10,15 @@ export async function generateMetadata({ params }: { params: { trackId: string }
     const track = payload.data;
     return {
       title: `${track.title} - ${track.artist}`,
-      description: `Listen to ${track.title} by ${track.artist} on SoundNest.`,
+      description: `Listen to ${track.title} by ${track.artist} on Wavra.`,
       openGraph: {
         title: `${track.title} - ${track.artist}`,
-        description: `Listen on SoundNest`,
+        description: `Listen on Wavra`,
         type: "music.song"
       }
     };
   } catch {
-    return { title: "Track - SoundNest" };
+    return { title: "Track - Wavra" };
   }
 }
 

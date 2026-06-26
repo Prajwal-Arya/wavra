@@ -11,7 +11,7 @@ import { MiniPlayer } from "@/components/player/MiniPlayer";
 import { VinylTurntable } from "@/components/player/VinylTurntable";
 
 export const metadata: Metadata = {
-  title: "SoundNest",
+  title: "Wavra",
   description: "Upload, stream, and organize music.",
   manifest: "/manifest.json",
   themeColor: "#7c3aed"
